@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+    {% extends 'base.html' %}
+
+    {% block content %}
+         <table style="border: 2px solid black">
+             <tr>
+                 <td style="padding: 10px; border:  2px solid black">{{postlar.title}}</td>
+                 <td style="padding: 10px; border:  2px solid black">{{postlar.body}}</td>
+             </tr>
+         </table>
+
+    {% endblock content %}

@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+    {% block content %}
+
+    <h1>Postlarni Ochirish</h1>
+    <hr>
+        <div>
+           <h1 style="color: crimson">Posrlarni taxrirlash</h1>
+            <hr>
+           <form action="" method="post">{% csrf_token %}
+            <p>{{post.title}} Blogni Ochisasizmi</p>
+             <input type="submit" value="Blogni Ochirish">
+           </form>
+         </div>
+    {% endblock content %}

@@ -1,6 +1,18 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<h1> Bosh Sahifa </h1>
+    {% block content %}
+    <table style="border: 2px solid black; width: 100%">
+    {% for post in object_list %}
+             <tr>
+                 <td style="padding: 10px; border:  2px solid black"><a href="{% url 'post_detail' post.pk %}">{{post.title}}</a></td>
+                 <td style=" padding: 10px; border:  2px solid black">{{post.body}}</td>
+                 <td style=" padding: 10px; border:  2px solid black"> <button><a href="{% url 'post_edit' post.pk%}">Postlarni tahrirlash</a></button></td>
+                 <td style=" padding: 10px; border:  2px solid black"> <button style="background-color: red;"><a href="{% url 'post_delete' post.pk%}">Posni Ochirish</a></button></td>
 
-{% endblock content %}
+             </tr>
+    {% endfor %}
+    </table>
+    {% endblock content %}
+
+
+
