@@ -9,15 +9,25 @@
   <header>
     <h1><a href="{% url 'home' %}">Django blogi</a></h1>
     <h1><a href="{% url 'post_new' %}">Yangi post</a></h1>
-<hr>
+  <hr>
 
 
   </header>
+  {% if user.is.authenticated %}
+  <p>{{users.username}}, Saytga Xush Kelipsiz</p>
+
+  {% else %}
+  <p>Siz Royxatdan Otmagansiz</p>
+  <a href="{% url 'login' %}">Log In</a>
+
+
+
+  {% endif %}
+<div>
   {% block content %}
 
   {% endblock content %}
-<footer>
+</div>
 
-</footer>
 </body>
 </html>
